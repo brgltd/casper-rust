@@ -1,3 +1,22 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "next"
+  ],
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  },
+  "globals": {
+    "React": true,
+    "JSX": true
+  },
+  "rules": {
+    "no-console": "error",
+    "func-style": ["error", "declaration"],
+    "no-else-return": "error",
+    "curly": ["error", "all"]
+  }
 }

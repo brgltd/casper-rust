@@ -1,0 +1,12 @@
+.markdown {
+  padding: 16px;
+}
+
+.markdown pre,
+.markdown code {
+  white-space: pre-wrap !important;
+}
+
+.markdown pre {
+  background-color: #1d1a23;
+}
