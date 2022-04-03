@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
-import getArticlesDir from "../levels/get-articles-dir";
+import getArticlesDir from "../get-articles-dir";
 import type { ParsedUrlQuery } from "querystring";
 import type ContentHTML from "../../types/content-html";
 

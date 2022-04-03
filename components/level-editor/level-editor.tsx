@@ -1,4 +1,6 @@
 import Editor from "@monaco-editor/react";
+import getDynamicHeight from "../../utils/get-dynamic-height";
+import styles from "./level-editor.module.css";
 
 const value = `fn set_key<T: ToBytes + CLTyped>(name: &str, value: T) {
   match runtime::get_key(name) {
@@ -15,12 +17,15 @@ const value = `fn set_key<T: ToBytes + CLTyped>(name: &str, value: T) {
 
 export default function LevelEditor(): JSX.Element {
   return (
-    <Editor
-      height="100vh"
-      defaultLanguage="rust"
-      defaultValue={value}
-      theme="vs-dark"
-      options={{ wordWrap: "on", minimap: { enabled: false } }}
-    />
+    <div className={styles.wrapper}>
+      <Editor
+        className={styles.monaco}
+        height={getDynamicHeight()}
+        defaultLanguage="rust"
+        defaultValue={value}
+        theme="vs-dark"
+        options={{ wordWrap: "on", minimap: { enabled: false } }}
+      />
+    </div>
   );
 }

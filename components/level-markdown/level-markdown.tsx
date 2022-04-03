@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Prism from "prismjs";
 import { Scrollbars } from "react-custom-scrollbars";
+import getDynamicHeight from "../../utils/get-dynamic-height";
 import type ContentHTML from "../../types/content-html";
 import type RenderThumbnailVertical from "./level-markdown.types";
 import "prismjs/components/prism-rust.min";
@@ -40,9 +41,13 @@ export default function LevelMarkdown({
   }, []);
 
   return (
-    <article onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <article
+      className={styles.article}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Scrollbars
-        style={{ width: "100%", height: "100vh" }}
+        style={{ width: "100%", height: getDynamicHeight() }}
         renderThumbVertical={renderThumbVertical}
         universal
       >

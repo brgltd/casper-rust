@@ -38,6 +38,7 @@ export default function ID({ contentHTML }: ContentHTML): JSX.Element {
     <Level>
       <LevelMarkdown contentHTML={contentHTML} />
       <LevelEditor />
+      {/* <LevelPagination /> */}
     </Level>
   );
 }

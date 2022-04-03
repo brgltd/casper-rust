@@ -1,5 +1,9 @@
+.article {
+  padding-top: var(--topbar-height);
+}
+
 .markdown {
-  padding: 16px;
+  padding: 16px 16px 16px 16px;
 }
 
 .markdown pre,

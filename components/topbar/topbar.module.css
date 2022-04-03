@@ -1,0 +1,16 @@
+.nav {
+  position: fixed;
+  z-index: 1;
+  height: var(--topbar-height);
+  border: 1px solid white;
+  width: 100vw;
+  background-color: var(--bg-color-nav);
+}
+
+.list {
+  display: flex;
+}
+
+.list > li {
+  border: 1px solid red;
+}

@@ -1,5 +1,5 @@
 import fs from "fs";
-import getArticlesDir from "../levels/get-articles-dir";
+import getArticlesDir from "../get-articles-dir";
 import GetLevelPaths from "./get-level-paths.types";
 
 export default function getLevelPaths(): Array<GetLevelPaths> {

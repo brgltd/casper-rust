@@ -1,5 +1,7 @@
 :root {
+  --topbar-height: 50px;
   --bg-color: #0b0b0b;
+  --bg-color-nav: gray;
   --text-color-paragraph: #ffffffe6;
   --text-color-title: #ffffff;
 }
@@ -27,6 +29,12 @@ h1,
 h2 {
   margin: 0;
   color: var(--text-color-title);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 strong {
