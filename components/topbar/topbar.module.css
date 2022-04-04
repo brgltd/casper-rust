@@ -2,9 +2,8 @@
   position: fixed;
   z-index: 1;
   height: var(--topbar-height);
-  border: 1px solid white;
   width: 100vw;
-  background-color: var(--bg-color-nav);
+  background-color: #242526;
 }
 
 .list {
@@ -13,4 +12,9 @@
 
 .list > li {
   border: 1px solid red;
+}
+
+.list > li > svg {
+  width: 40px;
+  height: 40px;
 }
