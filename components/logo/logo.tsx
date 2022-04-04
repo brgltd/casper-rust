@@ -1,19 +1,16 @@
-export default function Logo() {
+export default function Logo({ color }: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      id="Layer_1"
       x="0px"
       y="0px"
       viewBox="0 0 250 278"
       xmlSpace="preserve"
-      height="30px"
-      width="30px"
     >
       <style>{`
         .st0 {
-          fill: #ffffff;
+          fill: ${color};
         }
       `}</style>
       <g>

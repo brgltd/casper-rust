@@ -8,13 +8,36 @@
 
 .list {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 .list > li {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  will-change: color;
+  transition: color 250ms;
 }
 
 .list > li > svg {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+.list > li:first-child > svg {
+  width: 30px;
+  height: 28px;
+}
+
+.list > li > span {
+  font-size: 0.875rem;
+}
+
+.list > li:hover > svg,
+.list > li:hover > span {
+  color: #808080;
 }
