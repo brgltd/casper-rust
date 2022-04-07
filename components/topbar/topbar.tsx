@@ -40,9 +40,16 @@ export default function Topbar() {
             <span className={styles.text}>Code</span>
           </a>
         </li>
-        <li className={styles.item}>
-          <GoBook />
-          <span className={styles.text}>Docs</span>
+        <li>
+          <a
+            className={styles.item}
+            href={CONFIG.CASPER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GoBook />
+            <span className={styles.text}>Docs</span>
+          </a>
         </li>
         <li className={styles.item}>
           <MdShare />
