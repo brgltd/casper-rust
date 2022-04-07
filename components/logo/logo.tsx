@@ -1,4 +1,6 @@
-export default function Logo({ color }: any) {
+import type LogoProps from "./logo.types";
+
+export default function Logo({ color }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
