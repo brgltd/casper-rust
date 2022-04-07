@@ -17,6 +17,13 @@
     "no-console": "error",
     "func-style": ["error", "declaration"],
     "no-else-return": "error",
-    "curly": ["error", "all"]
+    "curly": ["error", "all"],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "aspects": ["invalidHref"]
+      }
+    ]
   }
 }

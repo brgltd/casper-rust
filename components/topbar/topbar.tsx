@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import cn from "classnames";
 import { MdDarkMode, MdShare } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
@@ -21,13 +22,13 @@ export default function Topbar() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        <li
-          className={cn(styles.item, styles.path)}
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
-        >
-          <Logo color={color} />
-          <span className={styles.text}>Path</span>
+        <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <Link href="/">
+            <a className={cn(styles.item, styles.path)}>
+              <Logo color={color} />
+              <span className={styles.text}>Path</span>
+            </a>
+          </Link>
         </li>
         <li>
           <a
