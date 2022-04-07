@@ -1,7 +1,9 @@
 import { useState } from "react";
+import cn from "classnames";
 import { MdDarkMode, MdShare } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { GoBook } from "react-icons/go";
+import CONFIG from "../../config";
 import Logo from "../logo/logo";
 import styles from "./topbar.module.css";
 
@@ -19,25 +21,36 @@ export default function Topbar() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        <li
+          className={cn(styles.item, styles.path)}
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
+        >
           <Logo color={color} />
-          <span>Path</span>
+          <span className={styles.text}>Path</span>
         </li>
         <li>
-          <AiFillGithub />
-          <span>Code</span>
+          <a
+            className={styles.item}
+            href={CONFIG.GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillGithub />
+            <span className={styles.text}>Code</span>
+          </a>
         </li>
-        <li>
+        <li className={styles.item}>
           <GoBook />
-          <span>Docs</span>
+          <span className={styles.text}>Docs</span>
         </li>
-        <li>
+        <li className={styles.item}>
           <MdShare />
-          <span>Share</span>
+          <span className={styles.text}>Share</span>
         </li>
-        <li>
+        <li className={styles.item}>
           <MdDarkMode />
-          <span>Mode</span>
+          <span className={styles.text}>Mode</span>
         </li>
       </ul>
     </nav>

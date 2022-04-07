@@ -1,5 +1,6 @@
-const config = {
-  revalidate: parseInt(process.env.REVALIDATE || "120"),
+const CONFIG = {
+  REVALIDATE: parseInt(process.env.REVALIDATE || "120"),
+  GITHUB_URL: "https://github.com/brgltd/casper-interactive-tutorial",
 };
 
-export default config;
+export default CONFIG;

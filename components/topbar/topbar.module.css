@@ -13,31 +13,29 @@
   height: 100%;
 }
 
-.list > li {
+.item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  will-change: color;
-  transition: color 250ms;
 }
 
-.list > li > svg {
+.item > svg {
   width: 30px;
   height: 30px;
 }
 
-.list > li:first-child > svg {
+.path > svg {
   width: 30px;
   height: 28px;
 }
 
-.list > li > span {
+.text {
   font-size: 0.875rem;
 }
 
-.list > li:hover > svg,
-.list > li:hover > span {
+.item:hover > .text,
+.item:hover > svg {
   color: #808080;
 }
