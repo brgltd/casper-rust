@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import Prism from "prismjs";
 import { Scrollbars } from "react-custom-scrollbars";
+import LevelMarkdownContent from "../level-markdown-content/level-markdown-content";
 import getDynamicHeight from "../../utils/get-dynamic-height";
+import useWidth from "../../hooks/useWidth";
+import CONFIG from "../../config";
 import type ContentHTML from "../../types/content-html";
 import type RenderThumbnailVertical from "./level-markdown.types";
 import "prismjs/components/prism-rust.min";
@@ -12,6 +15,7 @@ export default function LevelMarkdown({
   contentHTML,
 }: ContentHTML): JSX.Element {
   const [isHover, setIsHover] = useState(false);
+  const width = useWidth();
 
   function onMouseEnter() {
     setIsHover(true);
@@ -46,16 +50,17 @@ export default function LevelMarkdown({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <Scrollbars
-        style={{ width: "100%", height: getDynamicHeight() }}
-        renderThumbVertical={renderThumbVertical}
-        universal
-      >
-        <div
-          className={styles.markdown}
-          dangerouslySetInnerHTML={{ __html: contentHTML }}
-        />
-      </Scrollbars>
+      {width > CONFIG.BREAKPOINT ? (
+        <Scrollbars
+          style={{ width: "100%", height: getDynamicHeight() }}
+          renderThumbVertical={renderThumbVertical}
+          universal
+        >
+          <LevelMarkdownContent contentHTML={contentHTML} />
+        </Scrollbars>
+      ) : (
+        <LevelMarkdownContent contentHTML={contentHTML} />
+      )}
     </article>
   );
 }

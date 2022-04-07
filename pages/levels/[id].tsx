@@ -3,6 +3,7 @@ import LevelMarkdown from "../../components/level-markdown/level-markdown";
 import LevelEditor from "../../components/level-editor/level-editor";
 import getLevelPaths from "../../utils/get-level-paths/get-level-paths";
 import getLevelProps from "../../utils/get-level-props/get-level-props";
+import useIsClient from "../../hooks/useIsClient";
 import CONFIG from "../../config";
 import type {
   GetStaticPropsContext,
@@ -34,9 +35,10 @@ export async function getStaticProps(
 }
 
 export default function ID({ contentHTML }: ContentHTML): JSX.Element {
+  const isClient = useIsClient();
   return (
     <Level>
-      <LevelMarkdown contentHTML={contentHTML} />
+      {isClient && <LevelMarkdown contentHTML={contentHTML} />}
       <LevelEditor />
     </Level>
   );

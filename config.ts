@@ -1,7 +1,16 @@
-const CONFIG = {
+const CONFIG = Object.freeze({
+  // ISR revalidation time
   REVALIDATE: parseInt(process.env.REVALIDATE || "120"),
-  GITHUB_URL: "https://github.com/brgltd/casper-interactive-tutorial",
-  CASPER_URL: "https://docs.casperlabs.io/",
-};
+
+  // Mobile breakpoint in px
+  BREAKPOINT: 768,
+
+  // Throttle time in ms
+  THROTTLE: 100,
+
+  // URLs
+  GITHUB: "https://github.com/brgltd/casper-interactive-tutorial",
+  CASPER: "https://docs.casperlabs.io/",
+});
 
 export default CONFIG;

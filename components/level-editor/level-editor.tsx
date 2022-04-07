@@ -24,7 +24,10 @@ export default function LevelEditor(): JSX.Element {
         defaultLanguage="rust"
         defaultValue={value}
         theme="vs-dark"
-        options={{ wordWrap: "on", minimap: { enabled: false } }}
+        options={{
+          wordWrap: "on",
+          minimap: { enabled: false },
+        }}
       />
     </div>
   );

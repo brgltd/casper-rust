@@ -20,6 +20,18 @@ body {
   color: var(--text-color-paragraph);
 }
 
+body::-webkit-scrollbar {
+  width: 17px;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #424242;
+}
+
 a {
   color: inherit;
   text-decoration: none;

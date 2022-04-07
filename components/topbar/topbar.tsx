@@ -33,7 +33,7 @@ export default function Topbar() {
         <li>
           <a
             className={styles.item}
-            href={CONFIG.GITHUB_URL}
+            href={CONFIG.GITHUB}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -44,7 +44,7 @@ export default function Topbar() {
         <li>
           <a
             className={styles.item}
-            href={CONFIG.CASPER_URL}
+            href={CONFIG.CASPER}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,16 +1,9 @@
 .article {
   padding-top: var(--topbar-height);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.markdown {
-  padding: 16px 16px 16px 16px;
-}
-
-.markdown pre,
-.markdown code {
-  white-space: pre-wrap !important;
-}
-
-.markdown pre {
-  background-color: #1d1a23;
+.article::-webkit-scrollbar {
+  display: none;
 }
