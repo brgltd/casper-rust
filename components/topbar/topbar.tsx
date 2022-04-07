@@ -51,13 +51,17 @@ export default function Topbar() {
             <span className={styles.text}>Docs</span>
           </a>
         </li>
-        <li className={styles.item}>
-          <MdShare />
-          <span className={styles.text}>Share</span>
+        <li>
+          <button className={styles.item}>
+            <MdShare />
+            <span className={styles.text}>Share</span>
+          </button>
         </li>
-        <li className={styles.item}>
-          <MdDarkMode />
-          <span className={styles.text}>Mode</span>
+        <li>
+          <button className={styles.item}>
+            <MdDarkMode />
+            <span className={styles.text}>Mode</span>
+          </button>
         </li>
       </ul>
     </nav>
