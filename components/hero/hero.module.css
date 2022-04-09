@@ -1,17 +1,18 @@
 .wrapper {
   display: flex;
   justify-content: center;
+  --margin: 32px;
 }
 
 .container {
-  padding-top: calc(var(--topbar-height) + 40px);
+  padding-top: calc(var(--topbar-height) + var(--margin));
   display: flex;
   align-items: center;
 }
 
 .name {
   flex: 0 0 auto;
-  margin: 0 32px;
+  margin: 0 var(--margin);
   width: 400px;
   height: 100px;
   font-size: 2.5rem;
@@ -30,11 +31,11 @@
 
   .name {
     width: auto;
-    margin-bottom: 32px;
+    margin-bottom: var(--margin);
   }
 
   .msg {
-    margin: 0 32px;
+    margin: 0 var(--margin);
     font-size: 2rem;
   }
 }
