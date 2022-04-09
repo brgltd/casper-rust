@@ -4,7 +4,7 @@ import Hero from "../components/hero/hero";
 
 export default function Index(): JSX.Element {
   return (
-    <div>
+    <>
       <Head>
         <title>Welcome | CasperPath</title>
         <meta
@@ -16,6 +16,6 @@ export default function Index(): JSX.Element {
       <div>
         <Hero />
       </div>
-    </div>
+    </>
   );
 }
