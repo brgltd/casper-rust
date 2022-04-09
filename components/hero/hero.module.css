@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding-top: calc(var(--topbar-height) + 40px);
+  display: flex;
+}
+
+.name {
+  flex: 0 0 auto;
+  margin: 0 32px;
+  width: 400px;
+  height: 100px;
+  font-size: 2.5rem;
+}
+
+.msg {
+  flex: 1 1 auto;
+  font-size: 2.5rem;
+  margin-right: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .name {
+    margin-bottom: 32px;
+  }
+
+  .msg {
+    margin: 0 32px;
+    font-size: 2rem;
+  }
+}

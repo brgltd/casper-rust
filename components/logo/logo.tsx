@@ -9,6 +9,8 @@ export default function Logo({ color }: LogoProps) {
       y="0px"
       viewBox="0 0 250 278"
       xmlSpace="preserve"
+      width="100%"
+      height="100%"
     >
       <style>{`
         .st0 {
