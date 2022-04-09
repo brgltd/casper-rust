@@ -6,6 +6,7 @@
 .container {
   padding-top: calc(var(--topbar-height) + 40px);
   display: flex;
+  align-items: center;
 }
 
 .name {
@@ -22,12 +23,13 @@
   margin-right: 32px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .container {
     flex-direction: column;
   }
 
   .name {
+    width: auto;
     margin-bottom: 32px;
   }
 
