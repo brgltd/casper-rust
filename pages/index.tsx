@@ -29,9 +29,19 @@ export default function Index({ articlesData }: ArticlesData) {
       <div>
         <Hero />
         <List>
-          {articlesData.map(({ title, experience, id }) => (
+          {/* {articlesData.map(({ title, experience, id }) => (
             <ListItem key={id} title={title} id={id} experience={experience} />
-          ))}
+          ))} */}
+          {Array.from({ length: 4 }, () => {
+            return articlesData.map(({ title, experience, id }) => (
+              <ListItem
+                key={id}
+                title={title}
+                id={id}
+                experience={experience}
+              />
+            ));
+          })}
         </List>
       </div>
     </>
