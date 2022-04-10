@@ -1,6 +1,6 @@
 const getLevelPathsMock = [
-  { params: { id: "counter" } },
-  { params: { id: "hello-casper" } },
+  { params: { id: "0" } },
+  { params: { id: "1" } },
   { params: { id: "test" } },
 ];
 

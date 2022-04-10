@@ -10,7 +10,7 @@ import type {
   GetStaticPropsResult,
   GetStaticPathsResult,
 } from "next";
-import type ContentHTML from "../../types/content-html";
+import type LevelData from "../../types/level-data";
 
 export function getStaticPaths(): GetStaticPathsResult {
   const levelPaths = getLevelPaths();
@@ -22,7 +22,7 @@ export function getStaticPaths(): GetStaticPathsResult {
 
 export async function getStaticProps(
   context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<ContentHTML>> {
+): Promise<GetStaticPropsResult<LevelData>> {
   const { params } = context;
   if (!params) {
     return { notFound: true };
@@ -34,11 +34,11 @@ export async function getStaticProps(
   };
 }
 
-export default function ID({ contentHTML }: ContentHTML): JSX.Element {
+export default function ID({ title, contentHTML }: LevelData): JSX.Element {
   const isClient = useIsClient();
   return (
     <Level>
-      {isClient && <LevelMarkdown contentHTML={contentHTML} />}
+      {isClient && <LevelMarkdown title={title} contentHTML={contentHTML} />}
       <LevelEditor />
     </Level>
   );
