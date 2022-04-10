@@ -5,7 +5,7 @@ import getIndexProps from "../utils/get-index-props";
 import List from "../components/list/list";
 import ListItem from "../components/list-item/list-item";
 import CONFIG from "../config";
-// import type Names from "../types/names";
+import ArticlesData from "../types/articles-data";
 
 export function getStaticProps() {
   const indexProps = getIndexProps();
@@ -15,7 +15,7 @@ export function getStaticProps() {
   };
 }
 
-export default function Index({ articlesData }: any) {
+export default function Index({ articlesData }: ArticlesData) {
   return (
     <>
       <Head>
@@ -29,13 +29,8 @@ export default function Index({ articlesData }: any) {
       <div>
         <Hero />
         <List>
-          {articlesData.map(({ name, experience }, i) => (
-            <ListItem
-              key={name}
-              name={name}
-              i={i + 1}
-              experience={experience}
-            />
+          {articlesData.map(({ title, experience, id }) => (
+            <ListItem key={id} title={title} id={id} experience={experience} />
           ))}
         </List>
       </div>

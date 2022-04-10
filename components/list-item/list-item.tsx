@@ -1,10 +1,10 @@
-import ListItemProps from "./list-item-types";
+import IndexData from "../../types/index-data";
 
-export default function ListItem({ name, i, experience }: ListItemProps) {
+export default function ListItem({ title, id, experience }: IndexData) {
   return (
     <li>
-      <div>{i}</div>
-      <div>{name}</div>
+      <div>{id}</div>
+      <div>{title}</div>
       <div>{experience}</div>
     </li>
   );
