@@ -9,12 +9,12 @@ export default function ListItem({
 }: IndexData) {
   return (
     <li className={styles.item}>
-      <div>{id + 1}</div>
-      <div>{experience}</div>
+      <div className={styles.id}>{id + 1}</div>
+      <div className={styles.experience}>{experience}</div>
       <div>{title}</div>
-      <div>status: todo</div>
-      <div>start now</div>
-      <div>{estimation}</div>
+      <div className={styles.status}>status: todo</div>
+      <div className={styles.start}>start now</div>
+      <div className={styles.estimation}>Est. {estimation}</div>
     </li>
   );
 }

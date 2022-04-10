@@ -1,3 +1,46 @@
 .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 250px;
   border: 1px solid blue;
+}
+
+.id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.experience {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.status {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+}
+
+.estimation {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+.start {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
 }
