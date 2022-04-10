@@ -7,24 +7,33 @@
   border: 1px solid blue;
 }
 
-.id {
+.info {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: absolute;
-  left: 8px;
   top: 8px;
-  width: 32px;
-  height: 32px;
-  font-size: 24px;
-  border: 1px solid white;
+  /* border: 1px solid red; */
+}
+
+.id {
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  margin-right: 16px;
+  box-shadow: grey 0px 0px 5px 1px;
   border-radius: 50%;
 }
 
 .experience {
-  position: absolute;
-  right: 8px;
-  top: 8px;
+  margin-right: 16px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
 }
 
 .status {

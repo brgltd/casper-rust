@@ -1,4 +1,7 @@
 import IndexData from "../../types/index-data";
+import { BiRun } from "react-icons/bi";
+import { GiStrong } from "react-icons/gi";
+import { GiStrongMan } from "react-icons/gi";
 import styles from "./list-item.module.css";
 
 export default function ListItem({
@@ -9,8 +12,19 @@ export default function ListItem({
 }: IndexData) {
   return (
     <li className={styles.item}>
-      <div className={styles.id}>{id}</div>
-      <div className={styles.experience}>{experience}</div>
+      <div className={styles.info}>
+        <div className={styles.id}>{id}</div>
+        <div className={styles.experience}>{experience}</div>
+        <div className={styles.iconWrapper}>
+          {experience === "Beginner" ? (
+            <BiRun />
+          ) : experience === "Advanced" ? (
+            <GiStrongMan />
+          ) : (
+            <GiStrong />
+          )}
+        </div>
+      </div>
       <div>{title}</div>
       <div className={styles.status}>status: todo</div>
       <div className={styles.start}>start now</div>
