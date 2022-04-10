@@ -4,7 +4,17 @@
   justify-content: center;
   position: relative;
   height: 250px;
-  border: 1px solid blue;
+  background: #2a2a2a;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  will-change: border-color;
+  transition: border-color 250ms;
+}
+
+.item:hover {
+  border-color: gray;
 }
 
 .info {
@@ -32,6 +42,10 @@
 .iconWrapper {
   display: flex;
   align-items: center;
+  font-size: 24px;
+}
+
+.title {
   font-size: 24px;
 }
 
