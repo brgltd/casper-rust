@@ -33,12 +33,13 @@ export default function Index({ articlesData }: ArticlesData) {
             <ListItem key={id} title={title} id={id} experience={experience} />
           ))} */}
           {Array.from({ length: 4 }, () => {
-            return articlesData.map(({ title, experience, id }) => (
+            return articlesData.map(({ title, experience, id, estimation }) => (
               <ListItem
                 key={id}
                 title={title}
                 id={id}
                 experience={experience}
+                estimation={estimation}
               />
             ));
           })}

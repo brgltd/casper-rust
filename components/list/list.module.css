@@ -1,3 +1,7 @@
 .list {
+  display: grid;
+  padding: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
   border: 1px solid red;
 }

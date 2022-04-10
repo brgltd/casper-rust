@@ -8,13 +8,15 @@ import type ArticlesData from "../types/articles-data";
 export default function getIndexProps(): ArticlesData {
   const ids = getArticleNames();
   const articlesData = ids.map((id) => {
-    const nameWithMd = `${id}.md`;
-    const filePath = path.join(getArticlesDir(), nameWithMd);
+    const idWithMd = `${id}.md`;
+    const filePath = path.join(getArticlesDir(), idWithMd);
     const fileContent = fs.readFileSync(filePath, "utf8");
     const matterResult = matter(fileContent);
     const title = matterResult.data?.title || "";
     const experience = matterResult.data?.experience || "Intermediary";
-    return { title, experience, id };
+    const estimation = matterResult.data?.estimation || "15 min.";
+    const idNumber = parseInt(id);
+    return { title, experience, id: idNumber, estimation };
   });
   return { articlesData };
 }

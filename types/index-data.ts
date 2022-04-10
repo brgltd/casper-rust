@@ -1,5 +1,6 @@
 export default interface IndexData {
-  id: string;
+  id: number;
   title: string;
   experience: string;
+  estimation: string;
 }
