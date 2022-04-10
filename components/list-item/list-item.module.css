@@ -49,7 +49,7 @@
 
 .start {
   position: absolute;
-  left: 50%;
   bottom: 8px;
+  left: 50%;
   transform: translateX(-50%);
 }

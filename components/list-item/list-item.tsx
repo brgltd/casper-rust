@@ -2,6 +2,7 @@ import IndexData from "../../types/index-data";
 import { BiRun } from "react-icons/bi";
 import { GiStrong } from "react-icons/gi";
 import { GiStrongMan } from "react-icons/gi";
+import { RiTodoLine } from "react-icons/ri";
 import styles from "./list-item.module.css";
 
 export default function ListItem({
@@ -26,7 +27,11 @@ export default function ListItem({
         </div>
       </div>
       <div>{title}</div>
-      <div className={styles.status}>status: todo</div>
+      <div className={styles.status}>
+        <div className={styles.iconWrapper}>
+          <RiTodoLine />
+        </div>
+      </div>
       <div className={styles.start}>start now</div>
       <div className={styles.estimation}>Est. {estimation}</div>
     </li>
