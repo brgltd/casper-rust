@@ -20,7 +20,7 @@ export default async function getLevelProps(
     .use(html, { sanitize: false })
     .process(matterResult.content);
   const contentHTML = processedContent.toString();
-  const title = matterResult.data.title || "";
+  const title = matterResult.data?.title || "";
   const levelData = { title, contentHTML };
   return levelData;
 }

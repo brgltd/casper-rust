@@ -30,7 +30,7 @@ export default function getIndexProps() {
     const filePath = path.join(getArticlesDir(), nameWithMd);
     const fileContent = fs.readFileSync(filePath, "utf8");
     const matterResult = matter(fileContent);
-    const experience = matterResult?.data?.experience || "Intermediary";
+    const experience = matterResult.data?.experience || "Intermediary";
     return experience;
   });
   const articlesData = names.map((name, i) => ({
