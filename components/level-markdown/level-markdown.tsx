@@ -5,8 +5,8 @@ import LevelMarkdownContent from "../level-markdown-content/level-markdown-conte
 import getDynamicHeight from "../../utils/get-dynamic-height";
 import useWidth from "../../hooks/useWidth";
 import CONFIG from "../../config";
-import type LevelData from "../../types/level-data";
-import type RenderThumbnailVertical from "./level-markdown.types";
+import type { LevelMarkdownProps } from "./level-markdown.types";
+import type { RenderThumbnailVertical } from "./level-markdown.types";
 import "prismjs/components/prism-rust.min";
 import "prismjs/themes/prism-tomorrow.css";
 import styles from "./level-markdown.module.css";
@@ -14,7 +14,7 @@ import styles from "./level-markdown.module.css";
 export default function LevelMarkdown({
   title,
   contentHTML,
-}: LevelData): JSX.Element {
+}: LevelMarkdownProps): JSX.Element {
   const [isHover, setIsHover] = useState(false);
   const width = useWidth();
 

@@ -7,6 +7,7 @@ import prism from "remark-prism";
 import getArticlesDir from "../get-articles-dir";
 import type { ParsedUrlQuery } from "querystring";
 import type LevelData from "../../types/level-data";
+import getArticleNames from "../get-article-names";
 
 export default async function getLevelProps(
   params: ParsedUrlQuery
@@ -21,6 +22,8 @@ export default async function getLevelProps(
     .process(matterResult.content);
   const contentHTML = processedContent.toString();
   const title = matterResult.data?.title || "";
-  const levelData = { title, contentHTML };
+  const numberId = parseInt(id as string);
+  const numLevels = getArticleNames().length;
+  const levelData = { title, contentHTML, id: numberId, numLevels };
   return levelData;
 }

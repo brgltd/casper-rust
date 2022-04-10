@@ -1,10 +1,10 @@
-import type LevelData from "../../types/level-data";
+import { LevelMarkdownProps } from "../level-markdown/level-markdown.types";
 import styles from "./level-markdown-content.module.css";
 
 export default function LevelMarkdownContent({
   title,
   contentHTML,
-}: LevelData) {
+}: LevelMarkdownProps) {
   return (
     <div className={styles.container}>
       <h1>{title}</h1>

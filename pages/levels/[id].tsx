@@ -1,6 +1,7 @@
 import Level from "../../components/level/level";
 import LevelMarkdown from "../../components/level-markdown/level-markdown";
 import LevelEditor from "../../components/level-editor/level-editor";
+import LevelInfo from "../../components/level-info/level-info";
 import getLevelPaths from "../../utils/get-level-paths/get-level-paths";
 import getLevelProps from "../../utils/get-level-props/get-level-props";
 import useIsClient from "../../hooks/useIsClient";
@@ -34,11 +35,17 @@ export async function getStaticProps(
   };
 }
 
-export default function ID({ title, contentHTML }: LevelData): JSX.Element {
+export default function ID({
+  title,
+  contentHTML,
+  id,
+  numLevels,
+}: LevelData): JSX.Element {
   const isClient = useIsClient();
   return (
     <Level>
       {isClient && <LevelMarkdown title={title} contentHTML={contentHTML} />}
+      <LevelInfo id={id} numLevels={numLevels} />
       <LevelEditor />
     </Level>
   );
