@@ -9,7 +9,7 @@ export default function ListItem({
 }: IndexData) {
   return (
     <li className={styles.item}>
-      <div className={styles.id}>{id + 1}</div>
+      <div className={styles.id}>{id}</div>
       <div className={styles.experience}>{experience}</div>
       <div>{title}</div>
       <div className={styles.status}>status: todo</div>
