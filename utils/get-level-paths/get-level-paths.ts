@@ -1,11 +1,6 @@
-import fs from "fs";
-import getArticlesDir from "../get-articles-dir";
 import GetLevelPaths from "./get-level-paths.types";
+import getArticleNames from "../get-article-names";
 
 export default function getLevelPaths(): Array<GetLevelPaths> {
-  const fileNames = fs.readdirSync(getArticlesDir());
-  const paths = fileNames.map((fileName) => ({
-    params: { id: fileName.replace(/\.md$/, "") },
-  }));
-  return paths;
+  return getArticleNames().map((fileName) => ({ params: { id: fileName } }));
 }

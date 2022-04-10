@@ -1,3 +1,7 @@
+---
+experience: Beginner
+---
+
 # Hello Casper
 
 Paragraph with a bold word, **bold word**
