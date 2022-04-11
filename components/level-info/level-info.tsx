@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import processExpectedValue from "../../utils/process-expected-value";
+import CONFIG from "../../config";
 import type LevelInfoProps from "./level-info.types";
 import styles from "./level-info.module.css";
 
@@ -21,7 +22,7 @@ const style = {
   padding: "32px",
 };
 
-function LevelInfoModalFailure() {
+function LevelInfoModalFailure({ id }) {
   return (
     <>
       <p className={styles.warn}>
@@ -39,7 +40,7 @@ function LevelInfoModalFailure() {
           }}
           variant="contained"
           className={styles.submit}
-          href="https://github.com/brgltd"
+          href={`${CONFIG.ANSWERS}/${id}.md`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -59,11 +60,15 @@ function LevelInfoModalSuccess() {
   );
 }
 
-function LevelInfoModal({ isOpen, onClose, isCorrect }) {
+function LevelInfoModal({ isOpen, onClose, isCorrect, id }) {
   return (
     <Modal open={isOpen} onClose={onClose}>
       <Box sx={style}>
-        {isCorrect ? <LevelInfoModalSuccess /> : <LevelInfoModalFailure />}
+        {isCorrect ? (
+          <LevelInfoModalSuccess />
+        ) : (
+          <LevelInfoModalFailure id={id} />
+        )}
         <button onClick={onClose} className={styles.close}>
           X
         </button>
@@ -128,7 +133,12 @@ export default function LevelInfo({
         )}
       </div>
       {/* <BasicModal isOpen={isOpen} onClose={onClose} /> */}
-      <LevelInfoModal isOpen={isOpen} onClose={onClose} isCorrect={isCorrect} />
+      <LevelInfoModal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCorrect={isCorrect}
+        id={id}
+      />
     </>
   );
 }
