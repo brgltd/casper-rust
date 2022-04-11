@@ -12,6 +12,7 @@ import type {
   GetStaticPathsResult,
 } from "next";
 import type LevelData from "../../types/level-data";
+import { useRef } from "react";
 
 export function getStaticPaths(): GetStaticPathsResult {
   const levelPaths = getLevelPaths();
@@ -42,11 +43,13 @@ export default function ID({
   numLevels,
 }: LevelData): JSX.Element {
   const isClient = useIsClient();
+  const editorRef = useRef(null);
+
   return (
     <Level>
       {isClient && <LevelMarkdown title={title} contentHTML={contentHTML} />}
-      <LevelInfo id={id} numLevels={numLevels} />
-      <LevelEditor />
+      <LevelInfo id={id} numLevels={numLevels} editorRef={editorRef} />
+      <LevelEditor editorRef={editorRef} />
     </Level>
   );
 }

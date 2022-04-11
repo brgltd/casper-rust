@@ -1,8 +1,6 @@
-import { MutableRefObject } from "react";
 import type monaco from "monaco-editor";
+import { MutableRefObject } from "react";
 
-export default interface LevelInfoProps {
-  id: number;
-  numLevels: number;
+export default interface LevelEditorProps {
   editorRef: MutableRefObject<null | monaco.editor.IStandaloneCodeEditor>;
 }
