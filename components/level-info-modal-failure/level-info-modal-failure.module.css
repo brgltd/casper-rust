@@ -1,0 +1,14 @@
+.warn {
+  font-size: 1.1rem;
+}
+
+.flex {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.stuck {
+  font-size: 1.1rem;
+  margin-right: 16px;
+}

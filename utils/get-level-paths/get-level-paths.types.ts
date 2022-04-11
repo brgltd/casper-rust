@@ -1,3 +1,3 @@
-export default interface GetLevelTypes {
+export default interface GetLevelPaths {
   params: { id: string };
 }
