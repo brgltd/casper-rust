@@ -41,6 +41,8 @@ export default function ID({
   contentHTML,
   id,
   numLevels,
+  initialValue,
+  expectedValue,
 }: LevelData): JSX.Element {
   const isClient = useIsClient();
   const editorRef = useRef(null);
@@ -48,8 +50,13 @@ export default function ID({
   return (
     <Level>
       {isClient && <LevelMarkdown title={title} contentHTML={contentHTML} />}
-      <LevelInfo id={id} numLevels={numLevels} editorRef={editorRef} />
-      <LevelEditor editorRef={editorRef} />
+      <LevelInfo
+        id={id}
+        numLevels={numLevels}
+        editorRef={editorRef}
+        expectedValue={expectedValue}
+      />
+      <LevelEditor editorRef={editorRef} initialValue={initialValue} />
     </Level>
   );
 }
