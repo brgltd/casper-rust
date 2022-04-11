@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import processExpectedValue from "../../utils/process-expected-value";
 import type LevelInfoProps from "./level-info.types";
 import styles from "./level-info.module.css";
 
@@ -20,33 +21,50 @@ const style = {
   padding: "32px",
 };
 
-function BasicModal({ isSubmitOpen, onSubmitClose }) {
+function LevelInfoModalFailure() {
   return (
-    <Modal open={isSubmitOpen} onClose={onSubmitClose}>
+    <>
+      <p className={styles.warn}>
+        Then answer does not match the expect result.
+      </p>
+      <p className={styles.warn}>Please, try again.</p>
+      <div className={styles.flex}>
+        <span className={styles.stuck}>Stuck?</span>
+        <Button
+          sx={{
+            marginRight: "32px",
+            position: "relative",
+            zIndex: 2,
+            backgroundColor: "rgba(25, 118, 210, 0.5)",
+          }}
+          variant="contained"
+          className={styles.submit}
+          href="https://github.com/brgltd"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CHECK EXPECTED ANSWER
+        </Button>
+      </div>
+    </>
+  );
+}
+
+function LevelInfoModalSuccess() {
+  return (
+    <>
+      <p className={styles.warn}>Congratulations, the answer is correct!</p>
+      <p>Only 10 more questions to go.</p>
+    </>
+  );
+}
+
+function LevelInfoModal({ isOpen, onClose, isCorrect }) {
+  return (
+    <Modal open={isOpen} onClose={onClose}>
       <Box sx={style}>
-        <p className={styles.warn}>
-          Then answer does not match the expect result.
-        </p>
-        <p className={styles.warn}>Please, try again.</p>
-        <div className={styles.flex}>
-          <span className={styles.stuck}>Stuck?</span>
-          <Button
-            sx={{
-              marginRight: "32px",
-              position: "relative",
-              zIndex: 2,
-              backgroundColor: "rgba(25, 118, 210, 0.5)",
-            }}
-            variant="contained"
-            className={styles.submit}
-            href="https://github.com/brgltd"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CHECK EXPECTED ANSWER
-          </Button>
-        </div>
-        <button onClick={onSubmitClose} className={styles.close}>
+        {isCorrect ? <LevelInfoModalSuccess /> : <LevelInfoModalFailure />}
+        <button onClick={onClose} className={styles.close}>
           X
         </button>
       </Box>
@@ -57,17 +75,21 @@ function BasicModal({ isSubmitOpen, onSubmitClose }) {
 export default function LevelInfo({
   id,
   numLevels,
-}: // editorRef,
-LevelInfoProps) {
-  const [isSubmitOpen, setIsSubmitOpen] = useState(false);
+  editorRef,
+  expectedValue,
+}: LevelInfoProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
-  function onSubmitOpen() {
-    setIsSubmitOpen(true);
-    // const value = editorRef.current?.getValue();
+  function onOpen() {
+    const submittedRawValue = editorRef.current?.getValue() || "";
+    const submittedValue = processExpectedValue(submittedRawValue);
+    setIsCorrect(submittedValue === expectedValue);
+    setIsOpen(true);
   }
 
-  function onSubmitClose() {
-    setIsSubmitOpen(false);
+  function onClose() {
+    setIsOpen(false);
   }
 
   return (
@@ -82,7 +104,7 @@ LevelInfoProps) {
             backgroundColor: "rgba(25, 118, 210, 0.5)",
           }}
           variant="contained"
-          onClick={onSubmitOpen}
+          onClick={onOpen}
         >
           SUBMIT
         </Button>
@@ -105,7 +127,8 @@ LevelInfoProps) {
           </Link>
         )}
       </div>
-      <BasicModal isSubmitOpen={isSubmitOpen} onSubmitClose={onSubmitClose} />
+      {/* <BasicModal isOpen={isOpen} onClose={onClose} /> */}
+      <LevelInfoModal isOpen={isOpen} onClose={onClose} isCorrect={isCorrect} />
     </>
   );
 }
