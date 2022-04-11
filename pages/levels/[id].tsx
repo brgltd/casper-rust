@@ -49,14 +49,23 @@ export default function ID({
 
   return (
     <Level>
-      {isClient && <LevelMarkdown title={title} contentHTML={contentHTML} />}
-      <LevelInfo
-        id={id}
-        numLevels={numLevels}
-        editorRef={editorRef}
-        expectedValue={expectedValue}
-      />
-      <LevelEditor editorRef={editorRef} initialValue={initialValue} />
+      {isClient && (
+        <>
+          <LevelMarkdown title={title} contentHTML={contentHTML} />
+          <LevelInfo
+            id={id}
+            numLevels={numLevels}
+            editorRef={editorRef}
+            expectedValue={expectedValue}
+          />
+          <LevelEditor
+            editorRef={editorRef}
+            initialValue={initialValue}
+            // todo replace with uuid
+            key={Math.random()}
+          />
+        </>
+      )}
     </Level>
   );
 }
