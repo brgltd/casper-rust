@@ -31,7 +31,7 @@ export default async function getLevelProps(
     expectedValueMatter.content
   );
   const expectedValue = processExpectedValue(expectedValueWithSpace);
-  const levelData = {
+  return {
     title,
     contentHTML,
     id: numberId,
@@ -39,5 +39,4 @@ export default async function getLevelProps(
     initialValue,
     expectedValue,
   };
-  return levelData;
 }

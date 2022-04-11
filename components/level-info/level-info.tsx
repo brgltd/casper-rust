@@ -132,7 +132,6 @@ export default function LevelInfo({
           </Link>
         )}
       </div>
-      {/* <BasicModal isOpen={isOpen} onClose={onClose} /> */}
       <LevelInfoModal
         isOpen={isOpen}
         onClose={onClose}

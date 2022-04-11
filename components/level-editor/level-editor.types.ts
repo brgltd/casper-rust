@@ -3,4 +3,5 @@ import { MutableRefObject } from "react";
 
 export default interface LevelEditorProps {
   editorRef: MutableRefObject<null | monaco.editor.IStandaloneCodeEditor>;
+  initialValue: string;
 }

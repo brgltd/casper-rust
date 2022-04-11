@@ -5,4 +5,5 @@ export default interface LevelInfoProps {
   id: number;
   numLevels: number;
   editorRef: MutableRefObject<null | monaco.editor.IStandaloneCodeEditor>;
+  expectedValue: string;
 }

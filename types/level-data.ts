@@ -3,4 +3,6 @@ export default interface LevelData {
   title: string;
   id: number;
   numLevels: number;
+  expectedValue: string;
+  initialValue: string;
 }
