@@ -21,7 +21,7 @@ export default function LevelInfoModal({
         ) : (
           <LevelInfoModalFailure id={id} />
         )}
-        <button onClick={onClose} className={styles.close}>
+        <button className={styles.close} onClick={onClose}>
           X
         </button>
       </Box>
