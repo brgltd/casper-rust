@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import cn from "classnames";
-import { MdDarkMode, MdShare } from "react-icons/md";
+import { MdShare } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { GoBook } from "react-icons/go";
 import TopbarModal from "../topbar-modal/topbar-modal";
@@ -67,12 +67,6 @@ export default function Topbar() {
             <button className={styles.item} onClick={onOpen}>
               <MdShare />
               <span className={styles.text}>Share</span>
-            </button>
-          </li>
-          <li>
-            <button className={styles.item}>
-              <MdDarkMode />
-              <span className={styles.text}>Mode</span>
             </button>
           </li>
         </ul>
