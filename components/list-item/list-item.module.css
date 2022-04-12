@@ -62,10 +62,7 @@
 .estimation {
   position: absolute;
   right: 16px;
-  /* right: var(--spacing); */
-  /* bottom: var(--spacing); */
   top: 16px;
-  /* color: gray; */
   color: #c7c7c7;
 }
 

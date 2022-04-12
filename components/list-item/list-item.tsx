@@ -29,11 +29,7 @@ export default function ListItem({
             </div>
           </div>
           <div className={styles.title}>{title}</div>
-          <div className={styles.status}>
-            {/* <div className={styles.iconWrapper}>
-              <RiTodoLine />
-            </div> */}
-          </div>
+          <div className={styles.status}></div>
           <div className={styles.start}>START NOW</div>
           <div className={styles.estimation}>Est. {estimation}</div>
         </a>
