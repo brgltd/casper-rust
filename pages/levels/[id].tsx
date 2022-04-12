@@ -1,3 +1,4 @@
+import { v4 } from "uuid";
 import Level from "../../components/level/level";
 import LevelMarkdown from "../../components/level-markdown/level-markdown";
 import LevelEditor from "../../components/level-editor/level-editor";
@@ -61,8 +62,7 @@ export default function ID({
           <LevelEditor
             editorRef={editorRef}
             initialValue={initialValue}
-            // todo replace with uuid
-            key={Math.random()}
+            key={v4()}
           />
         </>
       )}
