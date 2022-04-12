@@ -7,6 +7,7 @@ import LevelInfoModal from "../level-info-modal/level-info-modal";
 import processExpectedValue from "../../utils/process-expected-value";
 import getAnswersFromStorage from "../../utils/get-answers-from-storage";
 import computeNumCorrect from "../../utils/compute-num-correct";
+import computeNumRemaining from "../../utils/compute-num-remaining";
 import type LevelInfoProps from "./level-info.types";
 import type Answers from "../../types/answers";
 import * as mui from "./level-info.mui";
@@ -41,6 +42,11 @@ export default function LevelInfo({
   }
 
   const numCorrect = useMemo(() => computeNumCorrect(answers), [answers]);
+
+  const numRemaining = useMemo(
+    () => computeNumRemaining(numLevels, numCorrect),
+    [numCorrect, numLevels]
+  );
 
   return (
     <>
@@ -82,6 +88,7 @@ export default function LevelInfo({
         onClose={onClose}
         isCorrect={isCorrect}
         id={id}
+        numRemaining={numRemaining}
       />
     </>
   );

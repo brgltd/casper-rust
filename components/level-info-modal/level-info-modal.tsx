@@ -11,12 +11,13 @@ export default function LevelInfoModal({
   onClose,
   isCorrect,
   id,
+  numRemaining,
 }: LevelInfoModalProps) {
   return (
     <Modal open={isOpen} onClose={onClose}>
       <Box sx={mui.box}>
         {isCorrect ? (
-          <LevelInfoModalSuccess />
+          <LevelInfoModalSuccess numRemaining={numRemaining} />
         ) : (
           <LevelInfoModalFailure id={id} />
         )}
