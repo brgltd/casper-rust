@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
 import Link from "next/link";
 import cn from "classnames";
 import Button from "@mui/material/Button";
@@ -12,6 +12,8 @@ import type LevelInfoProps from "./level-info.types";
 import type Answers from "../../types/answers";
 import * as mui from "./level-info.mui";
 import styles from "./level-info.module.css";
+import TopbarModal from "../topbar-modal/topbar-modal";
+import { TopbarModalContext } from "../../context/topbar-modal-context";
 
 export default function LevelInfo({
   id,
@@ -19,6 +21,8 @@ export default function LevelInfo({
   editorRef,
   expectedValue,
 }: LevelInfoProps) {
+  const { isTopbarModalOpen, onTopbarModalClose } =
+    useContext(TopbarModalContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [answers, setAnswers] = useState<Answers>(() =>
@@ -89,6 +93,11 @@ export default function LevelInfo({
         isCorrect={isCorrect}
         id={id}
         numRemaining={numRemaining}
+      />
+      <TopbarModal
+        isOpen={isTopbarModalOpen}
+        onClose={onTopbarModalClose}
+        numCorrect={numCorrect}
       />
     </>
   );

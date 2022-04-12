@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Link from "next/link";
 import cn from "classnames";
 import { MdShare } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { GoBook } from "react-icons/go";
-import TopbarModal from "../topbar-modal/topbar-modal";
+import { TopbarModalContext } from "../../context/topbar-modal-context";
 import CONFIG from "../../config";
 import Logo from "../logo/logo";
 import styles from "./topbar.module.css";
 
 export default function Topbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { onTopbarModalOpen } = useContext(TopbarModalContext);
   const [color, setColor] = useState("#ffffff");
 
   function onEnter() {
@@ -19,14 +19,6 @@ export default function Topbar() {
 
   function onLeave() {
     setColor("#ffffff");
-  }
-
-  function onOpen() {
-    setIsOpen(true);
-  }
-
-  function onClose() {
-    setIsOpen(false);
   }
 
   return (
@@ -64,14 +56,13 @@ export default function Topbar() {
             </a>
           </li>
           <li>
-            <button className={styles.item} onClick={onOpen}>
+            <button className={styles.item} onClick={onTopbarModalOpen}>
               <MdShare />
               <span className={styles.text}>Share</span>
             </button>
           </li>
         </ul>
       </nav>
-      <TopbarModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 }
