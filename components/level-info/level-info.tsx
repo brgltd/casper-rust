@@ -5,35 +5,12 @@ import Button from "@mui/material/Button";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import LevelInfoModal from "../level-info-modal/level-info-modal";
 import processExpectedValue from "../../utils/process-expected-value";
+import getAnswersFromStorage from "../../utils/get-answers-from-storage";
+import computeNumCorrect from "../../utils/compute-num-correct";
 import type LevelInfoProps from "./level-info.types";
+import type Answers from "../../types/answers";
 import * as mui from "./level-info.mui";
 import styles from "./level-info.module.css";
-
-interface Answers {
-  [key: string]: boolean;
-}
-
-function initAnswers(length: number) {
-  const array = Array.from({ length }, (_, i) => i + 1);
-  return array.reduce((acc: Answers, curr) => {
-    acc[curr] = false;
-    return acc;
-  }, {});
-}
-
-function getValueFromStorage(numLevels: number) {
-  const answers = localStorage.getItem("answers");
-  if (answers === null) {
-    const generatedAnswers = initAnswers(numLevels);
-    localStorage.setItem("answers", JSON.stringify(generatedAnswers));
-    return generatedAnswers;
-  }
-  return JSON.parse(answers);
-}
-
-function computeNumCorrect(answers: Answers) {
-  return Object.values(answers).reduce((acc, curr) => (curr ? ++acc : acc), 0);
-}
 
 export default function LevelInfo({
   id,
@@ -44,7 +21,7 @@ export default function LevelInfo({
   const [isOpen, setIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [answers, setAnswers] = useState<Answers>(() =>
-    getValueFromStorage(numLevels)
+    getAnswersFromStorage(numLevels)
   );
 
   function onOpen() {
