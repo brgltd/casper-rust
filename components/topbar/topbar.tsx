@@ -44,23 +44,23 @@ export default function Topbar() {
           <li>
             <a
               className={styles.item}
-              href={CONFIG.GITHUB}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiFillGithub />
-              <span className={styles.text}>Code</span>
-            </a>
-          </li>
-          <li>
-            <a
-              className={styles.item}
               href={CONFIG.CASPER}
               target="_blank"
               rel="noopener noreferrer"
             >
               <GoBook />
               <span className={styles.text}>Docs</span>
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles.item}
+              href={CONFIG.GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillGithub />
+              <span className={styles.text}>Code</span>
             </a>
           </li>
           <li>
