@@ -35,9 +35,9 @@ export default function Topbar() {
         <ul className={styles.list}>
           <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <Link href="/">
-              <a className={cn(styles.item, styles.path)}>
+              <a className={cn(styles.item, styles.home)}>
                 <Logo color={color} />
-                <span className={styles.text}>Path</span>
+                <span className={styles.text}>City</span>
               </a>
             </Link>
           </li>
