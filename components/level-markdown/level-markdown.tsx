@@ -15,7 +15,7 @@ export default function LevelMarkdown({
   title,
   contentHTML,
 }: LevelMarkdownProps): JSX.Element {
-  const [isHover, setIsHover] = useState(false);
+  const [isHover, setIsHover] = useState(true);
   const width = useWidth();
 
   function onMouseEnter() {
