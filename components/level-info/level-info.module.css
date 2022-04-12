@@ -1,9 +1,14 @@
 .container {
   display: flex;
+  align-items: center;
   position: absolute;
   right: 48px;
   bottom: 16px;
   z-index: 2;
+}
+
+.progress {
+  margin-right: 32px;
 }
 
 .iconWrapper {
@@ -16,7 +21,7 @@
 
 .left {
   transform: rotate(270deg);
-  margin: 0 24px;
+  margin-right: 24px;
 }
 
 .right {

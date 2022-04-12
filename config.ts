@@ -2,8 +2,8 @@ const CONFIG = Object.freeze({
   // ISR revalidation time
   REVALIDATE: parseInt(process.env.REVALIDATE || "120"),
 
-  // Mobile breakpoint in px
-  BREAKPOINT: 768,
+  // Breakpoint in px
+  BREAKPOINT: 993,
 
   // Throttle time in ms
   THROTTLE: 100,

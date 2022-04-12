@@ -68,8 +68,15 @@ export default function LevelInfo({
   return (
     <>
       <div className={styles.container}>
-        <h1>{numCorrect}</h1>
-        <Button sx={mui.submit} variant="contained" onClick={onOpen}>
+        <p className={styles.progress}>
+          Progress: {numCorrect}/{numLevels}
+        </p>
+        <Button
+          sx={mui.submit}
+          variant="contained"
+          size="large"
+          onClick={onOpen}
+        >
           SUBMIT
         </Button>
         {id !== 1 && (
