@@ -20,6 +20,11 @@
   color: gray;
 }
 
+.arrows {
+  display: flex;
+  align-items: center;
+}
+
 .left {
   transform: rotate(270deg);
   margin-right: 24px;
@@ -27,4 +32,22 @@
 
 .right {
   transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 993px) {
+  .container {
+    margin: 0 48px 32px 16px;
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .arrows {
+    margin-top: 8px;
+  }
 }

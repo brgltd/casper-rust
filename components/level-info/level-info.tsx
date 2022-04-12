@@ -56,24 +56,26 @@ export default function LevelInfo({
         >
           SUBMIT
         </Button>
-        {id !== 1 && (
-          <Link href={`/levels/${id - 1}`}>
-            <a>
-              <div className={cn(styles.iconWrapper, styles.left)}>
-                <AiOutlineArrowUp />
-              </div>
-            </a>
-          </Link>
-        )}
-        {id !== numLevels && (
-          <Link href={`/levels/${id + 1}`}>
-            <a>
-              <div className={cn(styles.iconWrapper, styles.right)}>
-                <AiOutlineArrowUp />
-              </div>
-            </a>
-          </Link>
-        )}
+        <div className={styles.arrows}>
+          {id !== 1 && (
+            <Link href={`/levels/${id - 1}`}>
+              <a>
+                <div className={cn(styles.iconWrapper, styles.left)}>
+                  <AiOutlineArrowUp />
+                </div>
+              </a>
+            </Link>
+          )}
+          {id !== numLevels && (
+            <Link href={`/levels/${id + 1}`}>
+              <a>
+                <div className={cn(styles.iconWrapper, styles.right)}>
+                  <AiOutlineArrowUp />
+                </div>
+              </a>
+            </Link>
+          )}
+        </div>
       </div>
       <LevelInfoModal
         isOpen={isOpen}
