@@ -24,6 +24,7 @@ export default function LevelEditor({
         options={{
           wordWrap: "on",
           minimap: { enabled: false },
+          tabSize: 4,
         }}
       />
     </div>
