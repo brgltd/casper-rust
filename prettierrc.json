@@ -3,5 +3,6 @@
   "printWidth": 80,
   "arrowParens": "always",
   "singleQuote": false,
-  "jsxSingleQuote": false
+  "jsxSingleQuote": false,
+  "endOfLine": "lf"
 }

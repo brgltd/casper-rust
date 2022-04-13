@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint **/*.{ts,tsx} --fix",
-    "format": "prettier **/*.{ts,tsx} --write",
+    "format": "prettier **/*.{ts,tsx,md} --write",
     "lint-staged": "lint-staged",
     "test": "jest --watchAll --coverage --verbose --detectOpenHandles"
   },
