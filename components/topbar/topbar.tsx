@@ -25,7 +25,7 @@ export default function Topbar() {
     <>
       <nav className={styles.nav}>
         <ul className={styles.list}>
-          <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <li onMouseEnter={onEnter} onMouseLeave={onLeave} title="Homepage">
             <Link href="/">
               <a className={cn(styles.item, styles.home)}>
                 <Logo color={color} />
@@ -33,7 +33,7 @@ export default function Topbar() {
               </a>
             </Link>
           </li>
-          <li>
+          <li title="Casper docs">
             <a
               className={styles.item}
               href={CONFIG.CASPER}
@@ -44,7 +44,7 @@ export default function Topbar() {
               <span className={styles.text}>Docs</span>
             </a>
           </li>
-          <li>
+          <li title="Repository">
             <a
               className={styles.item}
               href={CONFIG.GITHUB}
@@ -55,7 +55,7 @@ export default function Topbar() {
               <span className={styles.text}>Code</span>
             </a>
           </li>
-          <li>
+          <li title="Social media">
             <button className={styles.item} onClick={onTopbarModalOpen}>
               <MdShare />
               <span className={styles.text}>Share</span>
