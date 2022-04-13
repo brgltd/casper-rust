@@ -4,7 +4,7 @@
   justify-content: flex-end;
   position: absolute;
   right: 16px;
-  bottom: 1px;
+  bottom: 0px;
   z-index: 2;
   background: #1e1e1e;
   width: calc(50vw - 16px);
