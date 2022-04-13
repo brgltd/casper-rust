@@ -10,8 +10,8 @@ import Logo from "../logo/logo";
 import styles from "./topbar.module.css";
 
 export default function Topbar() {
-  const { onTopbarModalOpen } = useContext(TopbarModalContext);
   const [color, setColor] = useState("#ffffff");
+  const { onTopbarModalOpen } = useContext(TopbarModalContext);
 
   function onEnter() {
     setColor("#808080");

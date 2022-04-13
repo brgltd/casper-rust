@@ -21,13 +21,13 @@ export default function LevelInfo({
   editorRef,
   expectedValue,
 }: LevelInfoProps) {
-  const { isTopbarModalOpen, onTopbarModalClose } =
-    useContext(TopbarModalContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [answers, setAnswers] = useState<Answers>(() =>
     getAnswersFromStorage(numLevels)
   );
+  const { isTopbarModalOpen, onTopbarModalClose } =
+    useContext(TopbarModalContext);
 
   function onOpen() {
     const submittedRawValue = editorRef.current?.getValue() || "";
