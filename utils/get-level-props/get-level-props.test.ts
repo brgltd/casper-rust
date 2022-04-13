@@ -1,5 +1,5 @@
 import getLevelProps from "./get-level-props";
-import getLevelPropsMock from "../../mocks/get-level-props.mock";
+import getLevelPropsMock from "../../static/get-level-props.mock";
 
 describe("getLevelProps", () => {
   it("Should generate the html from the markdown content", async () => {
