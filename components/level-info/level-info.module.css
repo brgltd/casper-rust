@@ -1,10 +1,13 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   position: absolute;
-  right: 48px;
-  bottom: 16px;
+  right: 16px;
+  bottom: 1px;
   z-index: 2;
+  background: #1e1e1e;
+  width: calc(50vw - 16px);
 }
 
 .progress {
@@ -32,12 +35,20 @@
 
 .right {
   transform: rotate(90deg);
+  margin-right: 32px;
 }
 
 @media only screen and (max-width: 993px) {
   .container {
-    margin: 0 48px 32px 16px;
+    justify-content: flex-start;
     position: static;
+    margin: 0 48px 32px 16px;
+    width: auto;
+    background: transparent;
+  }
+
+  .right {
+    margin-right: 0;
   }
 }
 
