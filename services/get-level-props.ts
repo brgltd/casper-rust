@@ -1,12 +1,12 @@
 import remark from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
-import processInitialValue from "../process-initial-value";
-import processExpectedValue from "../process-expected-value";
-import generateMatter from "../generate-matter";
-import getArticleNames from "../get-article-names";
+import processInitialValue from "../utils/process-initial-value";
+import processExpectedValue from "../utils/process-expected-value";
+import generateMatter from "../utils/generate-matter";
+import getArticleNames from "../utils/get-article-names";
 import type { ParsedUrlQuery } from "querystring";
-import type LevelData from "../../types/level-data";
+import type LevelData from "../types/level-data";
 
 export default async function getLevelProps(
   params: ParsedUrlQuery

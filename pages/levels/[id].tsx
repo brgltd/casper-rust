@@ -4,8 +4,8 @@ import Level from "../../components/level/level";
 import LevelMarkdown from "../../components/level-markdown/level-markdown";
 import LevelEditor from "../../components/level-editor/level-editor";
 import LevelInfo from "../../components/level-info/level-info";
-import getLevelPaths from "../../utils/get-level-paths/get-level-paths";
-import getLevelProps from "../../utils/get-level-props/get-level-props";
+import getLevelPaths from "../../services/get-level-paths";
+import getLevelProps from "../../services/get-level-props";
 import useIsClient from "../../hooks/useIsClient";
 import CONFIG from "../../config";
 import type {

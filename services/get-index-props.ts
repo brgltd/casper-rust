@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import getArticleNames from "./get-article-names";
-import getArticlesDir from "./get-articles-dir";
+import getArticleNames from "../utils/get-article-names";
+import getArticlesDir from "../utils/get-articles-dir";
 import type ArticlesData from "../types/articles-data";
 
 export default function getIndexProps(): ArticlesData {
