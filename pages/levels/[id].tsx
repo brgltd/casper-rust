@@ -8,11 +8,7 @@ import getLevelPaths from "../../services/get-level-paths";
 import getLevelProps from "../../services/get-level-props";
 import useIsClient from "../../hooks/useIsClient";
 import CONFIG from "../../config";
-import type {
-  GetStaticPropsContext,
-  GetStaticPropsResult,
-  GetStaticPathsResult,
-} from "next";
+import type { GetStaticPropsContext, GetStaticPathsResult } from "next";
 import type LevelData from "../../types/level-data";
 import { useRef } from "react";
 
@@ -24,14 +20,15 @@ export function getStaticPaths(): GetStaticPathsResult {
   };
 }
 
-export async function getStaticProps(
-  context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<LevelData>> {
+export async function getStaticProps(context: GetStaticPropsContext) {
   const { params } = context;
   if (!params) {
     return { notFound: true };
   }
   const levelProps = await getLevelProps(params);
+  if (!levelProps) {
+    return { notFound: true };
+  }
   return {
     props: levelProps,
     revalidate: CONFIG.REVALIDATE,

@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import cn from "classnames";
 import { MdShare } from "react-icons/md";
@@ -12,6 +13,7 @@ import styles from "./topbar.module.css";
 export default function Topbar() {
   const [color, setColor] = useState("#ffffff");
   const { onTopbarModalOpen } = useContext(TopbarModalContext);
+  const { pathname } = useRouter();
 
   function onEnter() {
     setColor("#fa5959");
@@ -55,12 +57,14 @@ export default function Topbar() {
               <span className={styles.text}>Code</span>
             </a>
           </li>
-          <li title="Social media">
-            <button className={styles.item} onClick={onTopbarModalOpen}>
-              <MdShare />
-              <span className={styles.text}>Share</span>
-            </button>
-          </li>
+          {pathname !== "/" && (
+            <li title="Social media">
+              <button className={styles.item} onClick={onTopbarModalOpen}>
+                <MdShare />
+                <span className={styles.text}>Share</span>
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </>

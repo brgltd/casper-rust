@@ -1,0 +1,20 @@
+.container {
+  padding: calc(var(--topbar-height) + 64px) 0 0 64px;
+}
+
+.container h1 {
+  font-size: 64px;
+}
+
+.container a {
+  font-size: 64px;
+  color: blue;
+  border-bottom: 1px solid blue;
+  will-change: color, border-bottom;
+  transition: 250ms color border-bottom 250ms;
+}
+
+.container a:hover {
+  color: yellow;
+  border-bottom: 1px solid yellow;
+}
