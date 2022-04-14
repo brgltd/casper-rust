@@ -14,7 +14,7 @@ export default function Topbar() {
   const { onTopbarModalOpen } = useContext(TopbarModalContext);
 
   function onEnter() {
-    setColor("#808080");
+    setColor("#fa5959");
   }
 
   function onLeave() {

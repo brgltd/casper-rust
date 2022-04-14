@@ -37,5 +37,5 @@
 
 .item:hover > .text,
 .item:hover > svg {
-  color: #808080;
+  color: var(--hover-color);
 }

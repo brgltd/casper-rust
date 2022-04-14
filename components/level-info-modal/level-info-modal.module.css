@@ -9,5 +9,5 @@
 }
 
 .close:hover {
-  color: gray;
+  color: var(--hover-color);
 }

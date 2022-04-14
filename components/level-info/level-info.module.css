@@ -20,7 +20,7 @@
 }
 
 .iconWrapper:hover {
-  color: gray;
+  color: var(--hover-color);
 }
 
 .arrows {
