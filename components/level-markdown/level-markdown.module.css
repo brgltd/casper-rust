@@ -7,3 +7,15 @@
 .article::-webkit-scrollbar {
   display: none;
 }
+
+.article a {
+  color: blue;
+  border-bottom: 1px solid blue;
+  will-change: color, border-bottom;
+  transition: 250ms color border-bottom 250ms;
+}
+
+.article a:hover {
+  color: yellow;
+  border-bottom: 1px solid yellow;
+}

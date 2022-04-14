@@ -56,7 +56,7 @@ export default function LevelInfo({
     <>
       <div className={styles.container}>
         <p className={styles.progress}>
-          Progress: {numCorrect}/{numLevels}
+          Solved: {numCorrect}/{numLevels}
         </p>
         <Button
           sx={mui.submit}

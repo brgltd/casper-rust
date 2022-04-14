@@ -29,7 +29,7 @@ export default function Topbar() {
             <Link href="/">
               <a className={cn(styles.item, styles.home)}>
                 <Logo color={color} />
-                <span className={styles.text}>City</span>
+                <span className={styles.text}>Levels</span>
               </a>
             </Link>
           </li>

@@ -1,4 +1,5 @@
 import { v4 } from "uuid";
+import Head from "next/head";
 import Level from "../../components/level/level";
 import LevelMarkdown from "../../components/level-markdown/level-markdown";
 import LevelEditor from "../../components/level-editor/level-editor";
@@ -48,20 +49,32 @@ export default function ID({
   const isClient = useIsClient();
   const editorRef = useRef(null);
 
-  return isClient ? (
-    <Level>
-      <LevelMarkdown title={title} contentHTML={contentHTML} />
-      <LevelInfo
-        id={id}
-        numLevels={numLevels}
-        editorRef={editorRef}
-        expectedValue={expectedValue}
-      />
-      <LevelEditor
-        editorRef={editorRef}
-        initialValue={initialValue}
-        key={v4()}
-      />
-    </Level>
-  ) : null;
+  return (
+    <>
+      <Head>
+        <title>CasperRust | {title}</title>
+        <meta
+          name="description"
+          content="List of interactive Casper Smart Contracts interactive challenges"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      {isClient && (
+        <Level>
+          <LevelMarkdown title={title} contentHTML={contentHTML} />
+          <LevelInfo
+            id={id}
+            numLevels={numLevels}
+            editorRef={editorRef}
+            expectedValue={expectedValue}
+          />
+          <LevelEditor
+            editorRef={editorRef}
+            initialValue={initialValue}
+            key={v4()}
+          />
+        </Level>
+      )}
+    </>
+  );
 }

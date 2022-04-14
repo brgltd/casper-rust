@@ -9,8 +9,8 @@ export default function Hero() {
           <Name />
         </div>
         <h1 className={styles.msg}>
-          Learn how to develop <strong>Casper Smart Contracts</strong> by
-          building a simple abcdef ghixyz
+          Learn how to code <strong>Casper Smart Contracts</strong> in Rust
+          through interactive challenges
         </h1>
       </div>
     </section>
