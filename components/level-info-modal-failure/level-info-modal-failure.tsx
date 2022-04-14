@@ -8,9 +8,7 @@ export default function LevelInfoModalFailure({
 }: LevelInfoModalFailureProps) {
   return (
     <>
-      <p className={styles.warn}>
-        Then answer does not match the expect result.
-      </p>
+      <p className={styles.warn}>Then answer is incorrect.</p>
       <p className={styles.warn}>Please, try again.</p>
       <div className={styles.flex}>
         <span className={styles.stuck}>Stuck?</span>

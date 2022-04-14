@@ -8,19 +8,19 @@ import {
   FacebookIcon,
 } from "react-share";
 import generateUserMessage from "../../utils/generate-user-message";
-import * as mui from "./topbar-modal.mui";
+import * as mui from "../../styles/mui.ts";
 import type TopbarModalProps from "./topbar-modal.types";
 import styles from "./topbar-modal.module.css";
 
 export default function TopbarModal({
   isOpen,
   numCorrect,
-  numLevels,
+  numRemaining,
   onClose,
 }: TopbarModalProps) {
   const message = useMemo(
-    () => generateUserMessage(numCorrect, numLevels),
-    [numCorrect, numLevels]
+    () => generateUserMessage(numCorrect, numRemaining),
+    [numCorrect, numRemaining]
   );
 
   return (
@@ -28,7 +28,7 @@ export default function TopbarModal({
       <Box sx={mui.box}>
         <p className={styles.msg}>Share your CasperCity progress</p>
         <div className={styles.icons}>
-          <TwitterShareButton url="localhost:3000" title={message}>
+          <TwitterShareButton url="https://github.com" title={message}>
             <TwitterIcon size={64} round={true} />
           </TwitterShareButton>
           <FacebookShareButton url="https://github.com" quote={message}>

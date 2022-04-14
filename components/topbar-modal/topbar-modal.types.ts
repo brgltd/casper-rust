@@ -1,6 +1,6 @@
 export default interface TopbarModalProps {
   isOpen: boolean;
   numCorrect: number;
-  numLevels: number;
+  numRemaining: number;
   onClose: () => void;
 }

@@ -1,5 +1,5 @@
 .warn {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .flex {
@@ -11,4 +11,15 @@
 .stuck {
   font-size: 1.1rem;
   margin-right: 16px;
+}
+
+@media only screen and (max-width: 993px) {
+  .stuck {
+    margin-bottom: 16px;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

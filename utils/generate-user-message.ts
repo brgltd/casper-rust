@@ -1,12 +1,12 @@
 export default function generateUserMessage(
   numCorrect: number,
-  numLevels: number
+  numRemaining: number
 ) {
   if (numCorrect === 0) {
-    return `getting started, ${numCorrect}, ${numLevels}`;
+    return `Getting started on CasperRust smart contract challenges.`;
   }
-  if (numCorrect < numLevels) {
-    return `in progess, ${numCorrect}, ${numLevels}`;
+  if (numCorrect < numRemaining) {
+    return `Progressing on CasperRust smart contract challenges. Already done ${numCorrect}. Only ${numRemaining} challenges to go!`;
   }
-  return `all finished, ${numCorrect}, ${numLevels}`;
+  return `Finished all CasperRust smart contract challenges!`;
 }
