@@ -6,7 +6,7 @@ export default function generateUserMessage(
     return `Getting started on CasperRust smart contract challenges.`;
   }
   if (numCorrect < numLevels) {
-    return `Progressing on CasperRust smart contract challenges. Already done ${numCorrect}. Only ${numLevels} challenges to go!`;
+    return `Progressing on CasperRust smart contract challenges. Already done ${numCorrect} of ${numLevels} challenges!`;
   }
   return `Finished all CasperRust smart contract challenges!`;
 }
