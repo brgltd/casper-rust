@@ -12,7 +12,7 @@ https://casper-rust.vercel.app/
 
 ## Short Description
 
-The project emphasis is to develop smart contract in Casper using the Rust programming language.
+The project emphasis is to develop smart contracts in Casper using the Rust programming language.
 
 The emphasis is not on how to setup local environments or configurations.
 
