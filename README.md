@@ -4,6 +4,8 @@
 
 https://casper-rust.vercel.app/
 
+https://user-images.githubusercontent.com/58914258/163629167-d3f515cf-15a2-407e-b05e-7bb16d385237.mp4
+
 ## Highlights
 
 - Live coding challenges to be completed in a text editor.
