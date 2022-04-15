@@ -27,7 +27,7 @@ export default function TopbarModal({
   return (
     <Modal open={isOpen} onClose={onClose}>
       <Box sx={mui.box}>
-        <p className={styles.msg}>Share your CasperCity progress</p>
+        <p className={styles.msg}>Share your CasperRust progress</p>
         <div className={styles.icons}>
           <TwitterShareButton url={CONFIG.SITE} title={message}>
             <TwitterIcon size={64} round={true} />
