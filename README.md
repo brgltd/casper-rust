@@ -16,7 +16,7 @@ The project emphasis is to develop smart contracts in Casper using the Rust prog
 
 The emphasis is not on how to setup local environments or configurations.
 
-Rather, it's to get familiar on some of the concepts needed to develop Casper Smart Contracts in Rust.
+Rather, it's to get familiar with some of the concepts needed to develop Casper Smart Contracts in Rust.
 
 ## How to run the project locally
 
