@@ -6,7 +6,7 @@ describe("getLevelProps", () => {
     // This test is important to check if updates on remark, remark-html and remark-prism
     // don't break the generated html (missing tags, classes, etc).
     const result = await getLevelProps({ id: "test" });
-    expect(result.contentHTML.slice(0, -1)).toEqual(
+    expect(result?.contentHTML.slice(0, -1)).toEqual(
       getLevelPropsMock.slice(0, -1)
     );
   });

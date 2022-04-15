@@ -12,7 +12,7 @@ export default async function getLevelProps(params: ParsedUrlQuery) {
   const filePath = `${process.cwd()}/content/${params?.id}.md`;
   const matterResult = generateMatter(filePath);
   if (!matterResult) {
-    return matterResult;
+    return null;
   }
 
   const processedContent = await remark()
@@ -28,14 +28,14 @@ export default async function getLevelProps(params: ParsedUrlQuery) {
   const initialValuePath = `${process.cwd()}/content-metadata/initial-values/${id}.md`;
   const initialValueMatter = generateMatter(initialValuePath);
   if (!initialValueMatter) {
-    return matterResult;
+    return null;
   }
   const initialValue = processInitialValue(initialValueMatter.content);
 
   const expectedValuePath = `${process.cwd()}/content-metadata/expected-values/${id}.md`;
   const expectedValueMatter = generateMatter(expectedValuePath);
   if (!expectedValueMatter) {
-    return expectedValueMatter;
+    return null;
   }
   const expectedValueWithSpace = processInitialValue(
     expectedValueMatter.content
