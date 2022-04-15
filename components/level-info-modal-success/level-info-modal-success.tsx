@@ -6,7 +6,7 @@ export default function LevelInfoModalSuccess({
 }: LevelInfoModalSuccessProps) {
   return numRemaining !== 0 ? (
     <>
-      <p className={styles.warn}>Congratulations, the answer is correct!</p>
+      <p className={styles.title}>Congratulations, the answer is correct!</p>
       <p className={styles.warn}>
         Only {numRemaining} more{" "}
         {numRemaining === 1 ? "challenge" : "challenges"} to go.
