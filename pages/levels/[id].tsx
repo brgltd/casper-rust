@@ -16,7 +16,7 @@ export function getStaticPaths(): GetStaticPathsResult {
   const levelPaths = getLevelPaths();
   return {
     paths: levelPaths,
-    fallback: true,
+    fallback: false,
   };
 }
 
