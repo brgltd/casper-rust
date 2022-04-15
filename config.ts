@@ -13,6 +13,7 @@ const CONFIG = Object.freeze({
   CASPER: "https://docs.casperlabs.io/",
   ANSWERS:
     "https://github.com/brgltd/casper-interactive-tutorial/blob/main/content-metadata/expected-values",
+  SITE: "https://casper-rust.vercel.app/",
 });
 
 export default CONFIG;
