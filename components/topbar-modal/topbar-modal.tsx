@@ -16,12 +16,12 @@ import styles from "./topbar-modal.module.css";
 export default function TopbarModal({
   isOpen,
   numCorrect,
-  numRemaining,
+  numLevels,
   onClose,
 }: TopbarModalProps) {
   const message = useMemo(
-    () => generateUserMessage(numCorrect, numRemaining),
-    [numCorrect, numRemaining]
+    () => generateUserMessage(numCorrect, numLevels),
+    [numCorrect, numLevels]
   );
 
   return (

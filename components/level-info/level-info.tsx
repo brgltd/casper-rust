@@ -98,7 +98,7 @@ export default function LevelInfo({
         isOpen={isTopbarModalOpen}
         onClose={onTopbarModalClose}
         numCorrect={numCorrect}
-        numRemaining={numRemaining}
+        numLevels={numLevels}
       />
     </>
   );
