@@ -19,7 +19,7 @@ export default function Index({ articlesData }: ArticlesData) {
   return (
     <>
       <Head>
-        <title>Welcome | CasperRust</title>
+        <title>CasperRust | Welcome</title>
         <meta
           name="description"
           content="List of interactive Casper Smart Contracts interactive challenges"
