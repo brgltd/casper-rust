@@ -26,7 +26,7 @@ export default function Index({ articlesData }: ArticlesData) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <main>
         <Hero />
         <List>
           {articlesData.map(({ title, experience, id, estimation }) => (
@@ -39,7 +39,7 @@ export default function Index({ articlesData }: ArticlesData) {
             />
           ))}
         </List>
-      </div>
+      </main>
     </>
   );
 }

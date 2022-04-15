@@ -16,7 +16,7 @@
 }
 
 .item:hover {
-  border-color: #c0c0c0;
+  border-color: #dcdcdc;
 }
 
 .info {
@@ -75,6 +75,12 @@
   font-size: 14px;
   box-shadow: gray 0px 0px 2px 1px;
   color: #dddddd;
+  will-change: background-color;
+  transition: background-color 250ms;
+}
+
+.start:hover {
+  background-color: gray;
 }
 
 @media only screen and (max-width: 330px) {
