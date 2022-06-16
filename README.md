@@ -38,7 +38,7 @@ Additionaly, to add the initial code snippet inside the editor and the expected 
 
 - Add more content with more coding challenges.
 - Add light/dark theme switch (currently, there's only dark theme).
-- Add login functionalities to allow users accessing their progress in diferent devices (currently, it will retrieve only in the same browser and machine).
+- Add login functionalities to allow users accessing their progress in different devices (currently, it will retrieve only in the same browser and machine).
 - Give users the ability to like/dislike the content and display the count of likes/dislikes for each challenge on the UI.
 
 ## Contact
