@@ -4,7 +4,6 @@ import Hero from "../components/hero/hero";
 import getIndexProps from "../services/get-index-props";
 import List from "../components/list/list";
 import ListItem from "../components/list-item/list-item";
-import CONFIG from "../config";
 import ArticlesData from "../types/articles-data";
 
 export function getStaticProps() {

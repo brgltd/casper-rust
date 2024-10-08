@@ -7,7 +7,6 @@ import LevelInfo from "../../components/level-info/level-info";
 import getLevelPaths from "../../services/get-level-paths";
 import getLevelProps from "../../services/get-level-props";
 import useIsClient from "../../hooks/useIsClient";
-import CONFIG from "../../config";
 import type { GetStaticPropsContext, GetStaticPathsResult } from "next";
 import type LevelData from "../../types/level-data";
 import { useRef } from "react";
