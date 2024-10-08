@@ -31,7 +31,6 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   }
   return {
     props: levelProps,
-    revalidate: CONFIG.REVALIDATE,
   };
 }
 

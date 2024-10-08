@@ -11,7 +11,6 @@ export function getStaticProps() {
   const indexProps = getIndexProps();
   return {
     props: indexProps,
-    revalidate: CONFIG.REVALIDATE,
   };
 }
 
